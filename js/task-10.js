@@ -32,15 +32,19 @@ function createBoxes(amount) {
 }
 
 const destroyBoxes = () => {
-  boxesDiv.innerHTML = ''
+  boxesDiv.innerHTML = "";
 };
 
 createBtn.addEventListener("click", () => {
-  createBoxes(Number(input.value));
+  console.log(Number(input.value));
+  if (Number(input.value <= 100)) {
+    createBoxes(Number(input.value))
+  } else {
+    alert("Too much, motherfucker!");
+  }
 });
 
 destroyBtn.addEventListener("click", () => {
-  destroyBoxes()
-  input.value = null
+  destroyBoxes();
+  input.value = null;
 });
-
