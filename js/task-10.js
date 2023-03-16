@@ -10,8 +10,9 @@ const boxesDiv = document.querySelector("#boxes");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 
+let currentDivSize = 30;
+
 function createBoxes(amount) {
-  let currentDivSize = 30;
   const boxes = [];
 
   for (let i = 0; i < amount; i++) {
@@ -32,15 +33,15 @@ function createBoxes(amount) {
 }
 
 const destroyBoxes = () => {
+  currentDivSize = 30
   boxesDiv.innerHTML = "";
 };
 
 createBtn.addEventListener("click", () => {
-  console.log(Number(input.value));
   if (Number(input.value <= 100)) {
     createBoxes(Number(input.value))
   } else {
-    alert("Too much, motherfucker!");
+    alert("Too much, bruh!");
   }
 });
 

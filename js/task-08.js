@@ -11,8 +11,8 @@ submitBtn.addEventListener("click", (ev) => {
   if (emailValue.trim().length === 0 || passwordValue.trim().length === 0) {
     alert("Усі поля повинні бути заповнені!");
   } else {
-    userData.email = emailValue;
-    userData.password = passwordValue;
+    userData[loginForm.email.name] = emailValue;
+    userData[loginForm.password.name] = passwordValue;
     console.log(userData);
     loginForm.reset();
   }
